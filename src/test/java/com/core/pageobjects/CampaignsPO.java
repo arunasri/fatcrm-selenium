@@ -29,5 +29,8 @@ public class CampaignsPO {
 	
 	@FindBy(how = How.ID, using = "sort_by")
 	public WebElement sortByDateCreatedLink;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(text(), 'Campaign Statuses']")
+	public WebElement campaignStatuses;
 
 }

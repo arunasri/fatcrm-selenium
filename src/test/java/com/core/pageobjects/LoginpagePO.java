@@ -5,7 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginpagePO {
+public class LoginpagePO extends BasePageObjects {
+	public LoginpagePO(WebDriver driver) {
+		super(driver);
+	}
 	
 	@FindBy(how = How.ID, using = "authentication_username")
 	public WebElement username;
@@ -16,11 +19,5 @@ public class LoginpagePO {
 	@FindBy(how = How.NAME, using = "commit")
 	public WebElement loginButton;
 	
-	
-	public WebDriver driver;
-	public LoginpagePO(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
 }
 

@@ -6,7 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class TasksPO {
+public class TasksPO extends BasePageObjects {
+	public TasksPO(WebDriver driver) {
+		super(driver);
+	}
 	
 	@FindBy(how = How.ID, using = "authentication_username")
 	public WebElement username;
@@ -27,14 +30,6 @@ public class TasksPO {
 	public WebElement taskName;
 	
 	@FindBy(how = How.ID, using = "task_bucket")
-	public WebElement due;
-
-	
-	public WebDriver driver;
-	public TasksPO(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
-	
+	public WebElement due;	
 
 }

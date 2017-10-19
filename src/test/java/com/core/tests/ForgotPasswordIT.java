@@ -24,6 +24,7 @@ public class ForgotPasswordIT {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
+	
 	public void testForgotPassword() throws Exception {
 		driver.get(baseUrl + "/login");
 		ForgotPasswordPO forgotpassword = new ForgotPasswordPO(driver);

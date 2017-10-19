@@ -1,10 +1,15 @@
 package com.core.pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class CampaignsPO {
+public class CampaignsPO extends BasePageObjects {
+	public CampaignsPO(WebDriver driver) {
+		super(driver);
+	}
+	
 	
 	// campaign title
 	@FindBy(how = How.ID, using = "create_campaign_title")
@@ -21,6 +26,11 @@ public class CampaignsPO {
 	
 	@FindBy(how = How.NAME, using = "campaign[ends_on]")
 	public WebElement endDate;
+	
+	@FindBy(how = How.NAME, using = "campaign[status]")
+	public WebElement status;
+	
+	//@FindBy(how = How.)
 	
 	// Format link
 	@FindBy(how = How.XPATH, using = "//a[contains(text(), 'Brief format']")

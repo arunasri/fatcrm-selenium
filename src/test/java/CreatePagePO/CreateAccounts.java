@@ -92,6 +92,8 @@ public class CreateAccounts extends BasePageObjects {
 	   //Create Account Button
 	   @FindBy(how = How.ID, using = "commit")
 	   public WebElement createAccountButton;
+	   // cancel link
 	   @FindBy(how = How.PARTIAL_LINK_TEXT, using = "Cancel")
 	   public WebElement cancelLink;
+	   
 }

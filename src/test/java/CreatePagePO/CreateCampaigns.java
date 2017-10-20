@@ -29,10 +29,14 @@ public class CreateCampaigns extends BasePageObjects {
 		//public WebElement ;
 		
 		// Comment Text Field
+		@FindBy(how = How.PARTIAL_LINK_TEXT, using = " Comment")
+		public WebElement commentLink;
 		@FindBy(how = How.ID, using = "comment_body")
 		public WebElement commentTextField;
 		
 		// Objectives fields
+		@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Objectives")
+		public WebElement objectivesLink;
 		@FindBy(how = How.ID, using = "campaign_target_leads")
 		public WebElement obj_NumberOfLeads_TextField;		
 		@FindBy(how = How.ID, using = "campaign_target_conversion")
@@ -41,10 +45,12 @@ public class CreateCampaigns extends BasePageObjects {
 		public WebElement obj_Revenue_TextField;		
 		@FindBy(how = How.ID, using = "campaign_budget")
 		public WebElement obj_Budget_TextField;		
-		@FindBy(how = How.ID, using = "campaign_objectives")
+		@FindBy(how = How.NAME, using = "campaign[objectives]")
 		public WebElement obj_objectives_TextField;	
 		
 		// Permissions Radio buttons
+		@FindBy(how = How.PARTIAL_LINK_TEXT, using = " Permissions")
+		public WebElement permissionsLink;
 		@FindBy(how = How.ID, using = "campaign_access_private")
 		public WebElement privateRadioButton1;		
 		@FindBy(how = How.ID, using = "campaign_access_public")
@@ -53,8 +59,9 @@ public class CreateCampaigns extends BasePageObjects {
 		public WebElement sharedRadioButton3;
 		
 		// Create Campaign button
-		@FindBy(how = How.NAME, using = "commit")
+		@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Create Campaign")
 		public WebElement createCampaignButton;
+		
 		
 		// Cancel Link
 		@FindBy(how = How.PARTIAL_LINK_TEXT,  using = "Cancel")

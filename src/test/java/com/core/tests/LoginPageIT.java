@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 import com.core.pageobjects.LoginpagePO;
 
 @Test
-public class LoginPageIT {
+public class LoginPageIT extends BaseIT{
 	private WebDriver driver;
 	private String baseUrl;
 	private StringBuffer verificationErrors = new StringBuffer();
@@ -29,17 +29,18 @@ public class LoginPageIT {
 
 	public void testLoginPage() throws Exception {
 		driver.get(baseUrl + "/login");
-		LoginpagePO fatfreeweb = new LoginpagePO(driver);
-		fatfreeweb.username.clear();
-		fatfreeweb.username.sendKeys("heather");
-		fatfreeweb.password.clear();
-		fatfreeweb.password.sendKeys("heather");
-		fatfreeweb.loginButton.click();
-		System.out.println(driver.getTitle());
+		signIn(driver, "heather", "heather");
 	}
-
 	
-
+	
+	public void testSignIn() throws Exception {
+		driver.get(baseUrl + "/login");
+		signIn(driver, "heather", "heather");
+		signIn(driver, "heather", "heather");
+		signIn(driver, "heather", "heather");
+		
+	}
+	
 	@AfterMethod
 	@AfterClass(alwaysRun = true)
 	public void tearDown() throws Exception {

@@ -16,32 +16,16 @@ public class CampaignsPO extends BasePageObjects {
 	public WebElement campaigeTitle;
 	// create campaign link
 	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Create Campaign")
-	public WebElement createCampaignLink;
-	// campaign name text filed
-	@FindBy(how = How.NAME, using = "campaign[name]")
-	public WebElement campaignName;
-	
-	@FindBy(how = How.NAME, using = "campaign[starts_on]")
-	public WebElement startDate;
-	
-	@FindBy(how = How.NAME, using = "campaign[ends_on]")
-	public WebElement endDate;
-	
-	@FindBy(how = How.NAME, using = "campaign[status]")
-	public WebElement status;
-	
-	//@FindBy(how = How.)
-	
+	public WebElement createCampaignLink;	
 	// Format link
 	@FindBy(how = How.XPATH, using = "//a[contains(text(), 'Brief format']")
 	public WebElement briefFormatLink;
 	// format link
 	@FindBy(how = How.XPATH, using = "//a[contains(text(), 'Long format']")
 	public WebElement longFormatLink;
-	
+	//TABS
 	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Basic search")
-	public WebElement basicSearchTab;
-	
+	public WebElement basicSearchTab;	
 	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Advanced search")
 	public WebElement advancedSearchTab;
 	

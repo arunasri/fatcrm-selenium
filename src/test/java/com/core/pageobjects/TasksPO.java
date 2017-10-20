@@ -11,25 +11,13 @@ public class TasksPO extends BasePageObjects {
 		super(driver);
 	}
 	
-	@FindBy(how = How.ID, using = "authentication_username")
-	public WebElement username;
+	//Tasks title heading
+	@FindBy(how = How.ID, using = "/title")
+	public WebElement tasksTitle;
 	
-	@FindBy(how = How.ID, using = "authentication_password")
-	public WebElement password;
-	
-	@FindBy(how = How.ID, using = "commit")
-	public WebElement login;
-	
-	@FindBy(how = How.LINK_TEXT, using = "/tasks")
-	public WebElement tasksLink;
-	
-	@FindBy(how = How.LINK_TEXT, using = "/tasks/new?view=pending&cancel=false")
+	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "//a[contains(text()='Create Task')]")
 	public WebElement createTask;
 	
-	@FindBy(how = How.ID, using = "task_name")
-	public WebElement taskName;
 	
-	@FindBy(how = How.ID, using = "task_bucket")
-	public WebElement due;	
 
 }

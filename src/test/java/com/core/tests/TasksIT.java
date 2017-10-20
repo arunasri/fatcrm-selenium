@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import com.core.pageobjects.TasksPO;
 
-public class TasksIT {
+public class TasksIT extends BaseIT {
 	private WebDriver driver;
 	private String baseUrl;
 	private StringBuffer verificationErrors = new StringBuffer();
@@ -22,15 +22,13 @@ public class TasksIT {
 		driver = new ChromeDriver();
 		baseUrl = "http://demo.fatfreecrm.com";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		signIn(driver, "heather", "heather");
 	}	
 	
 	
 	public void testCreateTask() throws Exception {
 		driver.get(baseUrl + "/login");
 		TasksPO task = new TasksPO(driver);
-		task.username.sendKeys("heather");
-		task.password.sendKeys("heather");
-		task.login.click();
 	}
 	
 	@AfterMethod
